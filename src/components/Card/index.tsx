@@ -8,7 +8,7 @@ import type { Post } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 
-export type CardPostData = Pick<Post, 'slug' | 'categories' | 'meta' | 'title'>
+export type CardPostData = Pick<Post, 'slug' | 'categories' | 'meta' | 'title' | 'isSpotlight'>
 
 export const Card: React.FC<{
   alignItems?: 'center'
@@ -21,7 +21,7 @@ export const Card: React.FC<{
   const { card, link } = useClickableCard({})
   const { className, doc, relationTo, showCategories, title: titleFromProps } = props
 
-  const { slug, categories, meta, title } = doc || {}
+  const { slug, categories, meta, title, isSpotlight } = doc || {}
   const { description, image: metaImage } = meta || {}
 
   const hasCategories = categories && Array.isArray(categories) && categories.length > 0
@@ -32,11 +32,16 @@ export const Card: React.FC<{
   return (
     <article
       className={cn(
-        'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer',
+        'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer relative',
         className,
       )}
       ref={card.ref}
     >
+      {isSpotlight && (
+        <div className="absolute top-0 right-0 bg-yellow-500 text-black px-2 py-1 text-xs font-bold z-10 rounded-bl-lg">
+          Spotlight
+        </div>
+      )}
       <div className="relative w-full ">
         {!metaImage && <div className="">No image</div>}
         {metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="33vw" />}

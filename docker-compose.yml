@@ -26,6 +26,18 @@ services:
     logging:
       driver: none
 
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: bedrock-cms
+      POSTGRES_USER: bedrock
+      POSTGRES_PASSWORD: bedrock123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 volumes:
   data:
   node_modules:
+  postgres_data:

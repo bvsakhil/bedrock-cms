@@ -7,9 +7,9 @@ import { Media } from '@/components/Media'
 import { formatAuthors } from '@/utilities/formatAuthors'
 
 export const PostHero: React.FC<{
-  post: Post
+  post: Partial<Post>
 }> = ({ post }) => {
-  const { categories, heroImage, populatedAuthors, publishedAt, title } = post
+  const { categories, heroImage, populatedAuthors, publishedAt, title, isSpotlight } = post
 
   const hasAuthors =
     populatedAuthors && populatedAuthors.length > 0 && formatAuthors(populatedAuthors) !== ''
@@ -38,8 +38,13 @@ export const PostHero: React.FC<{
             })}
           </div>
 
-          <div className="">
+          <div className="relative">
             <h1 className="mb-6 text-3xl md:text-5xl lg:text-6xl">{title}</h1>
+            {isSpotlight && (
+              <div className="absolute top-0 right-0 bg-yellow-500 text-black px-2 py-1 text-xs font-bold z-10 rounded-lg">
+                Spotlight
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-16">

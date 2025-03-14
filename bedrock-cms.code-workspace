@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../bedrock"
+		}
+	],
+	"settings": {
+		"typescript.tsdk": "node_modules/typescript/lib"
+	}
+}

@@ -16,7 +16,7 @@ export const ArchiveBlock: React.FC<
 
   const limit = limitFromProps || 3
 
-  let posts: Post[] = []
+  let posts: Partial<Post>[] = []
 
   if (populateBy === 'collection') {
     const payload = await getPayload({ config: configPromise })
@@ -39,14 +39,21 @@ export const ArchiveBlock: React.FC<
             },
           }
         : {}),
+      select: {
+        title: true,
+        slug: true,
+        categories: true,
+        meta: true,
+        isSpotlight: true,
+      },
     })
 
-    posts = fetchedPosts.docs
+    posts = fetchedPosts.docs as Partial<Post>[]
   } else {
     if (selectedDocs?.length) {
       const filteredSelectedPosts = selectedDocs.map((post) => {
         if (typeof post.value === 'object') return post.value
-      }) as Post[]
+      }) as Partial<Post>[]
 
       posts = filteredSelectedPosts
     }

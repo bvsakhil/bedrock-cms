@@ -193,6 +193,16 @@ export const Posts: CollectionConfig<'posts'> = {
       hasMany: true,
       relationTo: 'users',
     },
+    {
+      name: 'isSpotlight',
+      type: 'checkbox',
+      label: 'Is Spotlight',
+      admin: {
+        description: 'Mark this post as a spotlight post',
+        position: 'sidebar',
+      },
+      defaultValue: false,
+    },
     // This field is only used to populate the user data via the `populateAuthors` hook
     // This is because the `user` collection has access control locked to protect user privacy
     // GraphQL will also not return mutated user data that differs from the underlying schema
