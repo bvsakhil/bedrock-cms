@@ -65,7 +65,10 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
-      ssl: { rejectUnauthorized: false }
+      ssl: { 
+        rejectUnauthorized: true,
+        ca: fs.readFileSync(sslCertPath).toString(),
+      }
     },
   }),
   collections: [Pages, Posts, Media, Categories, Users],
