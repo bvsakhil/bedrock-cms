@@ -2,6 +2,7 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
 
 import sharp from 'sharp' // sharp-import
+import fs from 'fs'
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
@@ -19,7 +20,9 @@ import { getServerSideURL } from './utilities/getURL'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
-
+// Use absolute path to the certificate in the project root
+const sslCertPath = path.resolve(process.cwd(), './ca-certificate.crt');
+console.log('SSL Cert Path:', sslCertPath);
 export default buildConfig({
   admin: {
     components: {
@@ -62,6 +65,7 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
+      ssl: { rejectUnauthorized: false }
     },
   }),
   collections: [Pages, Posts, Media, Categories, Users],
