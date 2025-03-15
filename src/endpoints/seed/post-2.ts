@@ -220,11 +220,12 @@ export const post2: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
       },
     },
     heroImage: heroImage.id,
+    description: 'Uncover the secrets of effective design principles and learn how to create interfaces that captivate and engage users.',
     meta: {
       description:
-        'Explore the untold and overlooked. A magnified view into the corners of the world, where every story deserves its spotlight.',
+        'Explore the principles that make design not just visually appealing, but functionally superior. A deep dive into the world where form meets function.',
       image: heroImage.id,
-      title: 'Global Gaze: Beyond the Headlines',
+      title: 'The Art of Design: Form Follows Function',
     },
     relatedPosts: [], // this is populated by the seed script
     title: 'Global Gaze: Beyond the Headlines',

@@ -303,6 +303,7 @@ export const post1: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
       },
     },
     heroImage: heroImage.id,
+    description: 'Explore the cutting-edge innovations shaping our digital landscape and discover how technology is transforming our future.',
     meta: {
       description:
         'Dive into the marvels of modern innovation, where the only constant is change. A journey where pixels and data converge to craft the future.',

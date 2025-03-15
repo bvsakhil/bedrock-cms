@@ -37,6 +37,7 @@ export default async function Page({ params: paramsPromise }: Args) {
       categories: true,
       meta: true,
       isSpotlight: true,
+      description: true,
     },
   })
 
@@ -46,6 +47,9 @@ export default async function Page({ params: paramsPromise }: Args) {
       <div className="container mb-16">
         <div className="prose dark:prose-invert max-w-none">
           <h1>Posts</h1>
+          <p className="text-lg text-muted-foreground">
+            Explore our collection of articles covering the latest insights, trends, and innovations.
+          </p>
         </div>
       </div>
 

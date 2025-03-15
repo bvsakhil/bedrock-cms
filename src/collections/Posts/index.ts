@@ -42,6 +42,7 @@ export const Posts: CollectionConfig<'posts'> = {
     title: true,
     slug: true,
     categories: true,
+    description: true,
     meta: {
       image: true,
       description: true,
@@ -73,6 +74,13 @@ export const Posts: CollectionConfig<'posts'> = {
       name: 'title',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'description',
+      type: 'textarea',
+      admin: {
+        description: 'A short description of the post that will appear on post cards and at the top of the post',
+      },
     },
     {
       type: 'tabs',

@@ -46,6 +46,12 @@ export const PostHero: React.FC<{
               </div>
             )}
           </div>
+          
+          {post.description && (
+            <div className="mb-6 text-lg md:text-xl">
+              {post.description}
+            </div>
+          )}
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-16">
             {hasAuthors && (

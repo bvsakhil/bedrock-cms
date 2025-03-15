@@ -213,6 +213,10 @@ export interface Page {
 export interface Post {
   id: number;
   title: string;
+  /**
+   * A short description of the post that will appear on post cards and at the top of the post
+   */
+  description?: string | null;
   heroImage?: (number | null) | Media;
   content: {
     root: {
@@ -1124,6 +1128,7 @@ export interface FormBlockSelect<T extends boolean = true> {
  */
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
+  description?: T;
   heroImage?: T;
   content?: T;
   relatedPosts?: T;

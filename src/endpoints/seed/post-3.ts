@@ -257,10 +257,12 @@ export const post3: (args: PostArgs) => RequiredDataFromCollectionSlug<'posts'> 
       },
     },
     heroImage: heroImage.id,
+    description: 'Delve into the fascinating world of AI and discover how machine learning is revolutionizing industries across the globe.',
     meta: {
-      description: `Money isn't just currency; it's a language. Dive deep into its nuances, where strategy meets intuition in the vast sea of finance.`,
+      description:
+        'Venture into the realm of artificial intelligence, where algorithms learn, adapt, and evolve. A journey through the digital neurons shaping our tomorrow.',
       image: heroImage.id,
-      title: 'Dollar and Sense: The Financial Forecast',
+      title: 'AI Revolution: The Rise of Machine Learning',
     },
     relatedPosts: [], // this is populated by the seed script
     title: 'Dollar and Sense: The Financial Forecast',

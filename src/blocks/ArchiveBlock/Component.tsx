@@ -45,6 +45,7 @@ export const ArchiveBlock: React.FC<
         categories: true,
         meta: true,
         isSpotlight: true,
+        description: true,
       },
     })
 

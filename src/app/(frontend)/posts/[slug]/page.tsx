@@ -109,6 +109,7 @@ const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
       publishedAt: true,
       populatedAuthors: true,
       isSpotlight: true,
+      description: true,
     },
   })
 

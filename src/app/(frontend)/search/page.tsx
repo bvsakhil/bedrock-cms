@@ -26,6 +26,7 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
       slug: true,
       categories: true,
       meta: true,
+      description: true,
     },
     // pagination: false reduces overhead if you don't need totalDocs
     pagination: false,
@@ -35,6 +36,11 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
             or: [
               {
                 title: {
+                  like: query,
+                },
+              },
+              {
+                description: {
                   like: query,
                 },
               },

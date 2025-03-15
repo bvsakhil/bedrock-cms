@@ -319,3 +319,31 @@ You can also deploy your app manually, check out the [deployment documentation](
 ## Questions
 
 If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+
+## S3 Storage Configuration
+
+This project uses Amazon S3 (or any S3-compatible storage service) for storing media files. To configure the S3 storage adapter, you need to set the following environment variables in your `.env` file:
+
+```bash
+# S3 Storage Configuration
+S3_ENDPOINT=https://your-s3-endpoint.com
+S3_REGION=your-region
+S3_ACCESS_KEY_ID=your-access-key-id
+S3_SECRET_ACCESS_KEY=your-secret-access-key
+S3_BUCKET=your-bucket-name
+```
+
+Replace the placeholder values with your actual S3 credentials and configuration.
+
+### Using with Different S3-Compatible Services
+
+The S3 adapter works with any S3-compatible storage service, including:
+
+- Amazon S3
+- DigitalOcean Spaces
+- MinIO
+- Backblaze B2
+- Wasabi
+- Linode Object Storage
+
+For services other than Amazon S3, you may need to set `forcePathStyle: true` in the configuration (already set in this project).
