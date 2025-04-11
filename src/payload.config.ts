@@ -82,7 +82,7 @@ export default buildConfig({
     },
   }),
   collections: [Pages, Posts, Media, Categories, Users, Subscribers],
-  cors: [getServerSideURL(),"http://localhost:3000"].filter(Boolean),
+  cors: [getServerSideURL(),"http://localhost:3000","https://onbedrock.co"].filter(Boolean),
   globals: [Header, Footer],
   plugins: [
     ...plugins,
