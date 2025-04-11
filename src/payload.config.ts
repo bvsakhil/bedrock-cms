@@ -37,6 +37,8 @@ export default buildConfig({
       // The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeDashboard` statement on line 15.
       beforeDashboard: ['@/components/BeforeDashboard'],
+      // Hide the API button
+      afterNavLinks: ['@/components/HideAPIButton'],
     },
     importMap: {
       baseDir: path.resolve(dirname),
@@ -63,6 +65,9 @@ export default buildConfig({
           height: 900,
         },
       ],
+    },
+    meta: {
+      titleSuffix: '- Admin',
     },
   },
   // This config helps us configure global or default features that the other editors can inherit
