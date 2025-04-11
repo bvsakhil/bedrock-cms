@@ -10,6 +10,7 @@ import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
 
 import { Categories } from './collections/Categories'
+import { Subscribers } from './collections/Subscriptions'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
@@ -25,6 +26,8 @@ const dirname = path.dirname(filename)
 // Use absolute path to the certificate in the project root
 const sslCertPath = path.resolve(process.cwd(), './ca-certificate.crt');
 console.log('SSL Cert Path:', sslCertPath);
+
+
 export default buildConfig({
   admin: {
     components: {
@@ -73,8 +76,8 @@ export default buildConfig({
       }
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users],
-  cors: [getServerSideURL()].filter(Boolean),
+  collections: [Pages, Posts, Media, Categories, Users, Subscribers],
+  cors: [getServerSideURL(),"http://localhost:3000"].filter(Boolean),
   globals: [Header, Footer],
   plugins: [
     ...plugins,
