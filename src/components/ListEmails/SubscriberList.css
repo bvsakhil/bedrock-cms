@@ -1,0 +1,106 @@
+.subscriber-list {
+    padding: 24px;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+  
+  .back-button:hover {
+    text-decoration: underline;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+  
+  .loading-text {
+    text-align: center;
+    color: gray;
+    margin-top: 32px;
+  }
+  
+  .no-subscribers {
+    color: gray;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subscriber-table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+  }
+  
+  .subscriber-table th {
+    background-color: #f7f7f7;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #4a5568;
+    padding: 12px 24px;
+  }
+  
+  .subscriber-table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    color: #1a202c;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .subscriber-table tr:hover {
+    background-color: #f9fafb;
+  }
+  
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  
+  .pagination button {
+    padding: 8px 16px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+  }
+  
+  .button-container {
+    margin-top: 24px;
+    text-align: center;
+  }
+  
+  .export-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .export-button:hover {
+    background-color: #ffffff;
+  }
+  

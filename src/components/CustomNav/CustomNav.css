@@ -1,0 +1,17 @@
+.custom-nav {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .custom-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .custom-nav a:hover {
+    text-decoration: underline;
+  }
+  

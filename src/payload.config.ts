@@ -39,6 +39,15 @@ export default buildConfig({
       beforeDashboard: ['@/components/BeforeDashboard'],
       // Hide the API button
       afterNavLinks: ['@/components/HideAPIButton'],
+
+      Nav: '@/components/CustomNav',
+
+      views: {
+        ListEmails: {
+          Component: '@/components/ListEmails',
+          path: '/list-emails',
+        },
+      },
     },
     importMap: {
       baseDir: path.resolve(dirname),
