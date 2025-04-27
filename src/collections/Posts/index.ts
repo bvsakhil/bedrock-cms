@@ -182,8 +182,8 @@ export const Posts: CollectionConfig<'posts'> = {
         position: 'sidebar',
       },
       hasMany: true,
-      relationTo: 'users',
-    },
+      relationTo: 'authors',
+    },    
     {
       name: 'isSpotlight',
       type: 'checkbox',
