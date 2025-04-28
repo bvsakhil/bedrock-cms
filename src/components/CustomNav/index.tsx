@@ -2,7 +2,7 @@
 import { Link } from '@payloadcms/ui';
 import React from 'react';
 import './CustomNav.css'; // Import the CSS
-import { useTheme } from '@/providers/Theme';
+import { useTheme } from '@payloadcms/ui';
 
 const CustomNav: React.FC = () => {
 

@@ -90,11 +90,14 @@ const SubscriberList: React.FC = () => {
     <div className="subscriber-list">
       <button onClick={goBack} className="back-button">← Back</button>
 
-      <h2 className="title">Subscribers List</h2>
+<div className='title-container'>
+<h2 className="title">Subscribers List</h2>
 
-      <div className="button-container">
-        <button onClick={exportCSV} className="export-button">Export CSV</button>
-      </div>
+<div className="button-container">
+  <button onClick={exportCSV} className="export-button">Export CSV</button>
+</div>
+</div>
+
 
       {subscribers.length === 0 ? (
         <p className="no-subscribers">No subscribers found.</p>

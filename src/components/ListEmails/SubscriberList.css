@@ -103,4 +103,11 @@
   .export-button:hover {
     background-color: #ffffff;
   }
+
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Optional: space below title + button */
+  }
   
