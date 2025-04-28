@@ -32,21 +32,44 @@ const SubscriberList: React.FC = () => {
 
   const exportCSV = () => {
     if (subscribers.length === 0) return;
-
+  
     const csvHeader = 'Email\n';
     const csvRows = subscribers.map(subscriber => `${subscriber.maile}`).join('\n');
     const csvContent = csvHeader + csvRows;
-
+  
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
-
+  
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'subscribers.csv';
+  
+    // Generate a very human-readable timestamp
+    const now = new Date();
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    const month = months[now.getMonth()];
+    const day = String(now.getDate()).padStart(2, '0');
+    const year = now.getFullYear();
+  
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const strHours = String(hours).padStart(2, '0');
+  
+    const timestamp = `${month}-${day}-${year}_${strHours}-${minutes}-${seconds}_${ampm}`;
+  
+    link.download = `subscribers_${timestamp}.csv`;
+  
     link.click();
-
     URL.revokeObjectURL(url);
   };
+  
+  
 
   const totalPages = Math.ceil(subscribers.length / ITEMS_PER_PAGE);
 
@@ -68,6 +91,10 @@ const SubscriberList: React.FC = () => {
       <button onClick={goBack} className="back-button">← Back</button>
 
       <h2 className="title">Subscribers List</h2>
+
+      <div className="button-container">
+        <button onClick={exportCSV} className="export-button">Export CSV</button>
+      </div>
 
       {subscribers.length === 0 ? (
         <p className="no-subscribers">No subscribers found.</p>
@@ -111,9 +138,7 @@ const SubscriberList: React.FC = () => {
         </div>
       )}
 
-      <div className="button-container">
-        <button onClick={exportCSV} className="export-button">Export CSV</button>
-      </div>
+
     </div>
   );
 };
